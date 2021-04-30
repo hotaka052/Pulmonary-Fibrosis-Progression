@@ -41,7 +41,6 @@ def mono_to_color(X: np.ndarray,
     """
     1次元の画像を3次元に変換する関数
     Code from https://www.kaggle.com/daisukelab/creating-fat2019-preprocessed-data
-
     """
     # Stack X as [X,X,X]
     X = np.stack([X, X, X], axis=-1)
