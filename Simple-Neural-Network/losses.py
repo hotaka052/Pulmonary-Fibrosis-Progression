@@ -3,8 +3,10 @@ import numpy as np
 import tensorflow as tf
 import tensorflow.keras.backend as K
 
-#評価指標を再現した関数
 def score(y_true, y_pred):
+    """
+    評価指標を再現した関数
+    """
     c1 = tf.constant(70, dtype = 'float32')
     c2 = tf.constant(1000, dtype = 'float32')
     
@@ -21,8 +23,10 @@ def score(y_true, y_pred):
     
     return K.mean(metric)
 
-#ピンボールロス
 def qloss(y_true, y_pred):
+    """
+    ピンボールロス
+    """
     qs = [0.2, 0.50, 0.8]
     q = tf.constant(np.array([qs]), dtype = tf.float32)
     e = y_true - y_pred
